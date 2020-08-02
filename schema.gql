@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  newTodo(newTodo: TodoInput!): Todo!
+  updateTodoStatus(updateTodo: UpdateStatusTodoInput!): Todo!
+}
+
+type Query {
+  getAllTodos: [Todo!]!
+  getByIdTodo(id: Float!): Todo!
+}
+
+enum StatusEnum {
+  TODO
+  DONE
+}
+
+type Todo {
+  """Id of todo"""
+  id: Int!
+
+  """Tiitle of todo"""
+  title: String!
+
+  """Status of todo"""
+  status: StatusEnum!
+}
+
+input TodoInput {
+  """Title of todo"""
+  title: String!
+
+  """Status of todo"""
+  status: StatusEnum!
+}
+
+input UpdateStatusTodoInput {
+  """Id of update status"""
+  id: Float!
+
+  """Updated status of todo"""
+  status: StatusEnum!
+}
